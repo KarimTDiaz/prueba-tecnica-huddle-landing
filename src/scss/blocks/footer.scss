@@ -1,0 +1,49 @@
+@use '../mixins/responsive.scss' as*;
+@use '../mixins/flexbox.scss' as*;
+@use '../mixins/hover.scss' as*;
+.footer{
+    padding:10rem 1rem 2rem;
+    margin-bottom: 0;
+    background-color: var(--dark-cyan);
+    text-align: start;
+
+    &-list__item{
+        margin-bottom: 1.6rem;
+    }
+    @include responsive(laptop){
+     display: grid;
+     grid-template-columns:repeat(3, 1fr) ;
+     justify-content: space-between;
+     align-items: baseline;
+     gap: 4rem;
+    }
+    &-list{
+        @include responsive(laptop){
+            display: grid;
+            grid-template-columns:repeat(2, 1fr);
+            grid-template-rows: repeat(3,50px);
+           }
+    }
+    &-list__link{
+        &:hover{
+            @include hover{
+                border-bottom: 1px solid white;
+            }
+        }
+    }
+}
+.contacts-list{
+    padding: 0.5rem 0 3rem;
+    margin: 0;
+    &__item{
+  @include flexbox(flex,row,nowrap,start,baseline);
+  gap:2.5rem;
+    }
+}
+.social-list{
+    @include flexbox(flex,row,nowrap,center,center);
+    gap:1rem;
+    @include responsive(laptop){
+        margin-bottom: 200px;
+    }
+}

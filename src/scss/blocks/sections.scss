@@ -1,0 +1,23 @@
+@use '../mixins/flexbox.scss' as*;
+@use '../mixins/responsive.scss' as*;
+.section{
+    width: 90%;
+    height:650px;
+    margin: 0 auto 2.5rem;
+    padding: 4rem 3rem;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 10px 0 lightgray;
+    @include responsive(laptop){
+        @include flexbox(flex,row,nowrap,space-between,center);
+        gap:50px;
+        text-align: start;
+        height: 480px;
+        &__text{
+            width: 57%;
+            padding: 5rem;
+        }
+        &--reverse{
+            @include flexbox(flex,row-reverse,nowrap,space-between,center);
+        }
+    }
+}

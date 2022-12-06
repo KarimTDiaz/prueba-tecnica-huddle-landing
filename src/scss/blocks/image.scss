@@ -1,0 +1,14 @@
+@use '../mixins/responsive.scss' as*;
+.image--header{
+    padding-top: 2rem;
+    @include responsive(laptop){
+        width: 700px;
+    }
+}
+.image{
+    width: 280px;
+    margin:0 auto 5rem;
+    @include responsive (laptop){
+     width: 400px;
+    }
+}

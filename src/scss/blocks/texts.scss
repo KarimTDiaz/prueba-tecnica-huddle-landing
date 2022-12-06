@@ -1,0 +1,30 @@
+@use '../mixins/responsive.scss' as*;
+.text{
+    font-family: 'Open Sans', sans-serif;
+    line-height: 2rem;
+    font-size: 1.1rem;
+
+    &--small{
+        font-size: 1rem;
+        line-height: 1.5rem;
+        color: var(--gray-blue);
+    }
+
+    &--footer{
+        color: var(--white);
+        @include responsive(laptop){
+            font-size: 0.9rem;
+        }
+    }
+
+    &--bottom-footer{
+        font-size: 1rem;
+        text-align: center;
+        color: var(--white);
+        @include responsive(laptop){
+            font-size: 0.8rem;
+        }
+    }
+}
+
+

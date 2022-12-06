@@ -1,0 +1,20 @@
+@use '../mixins/responsive.scss' as*;
+
+.card-container{
+    position: relative;
+}
+.card{
+    position: absolute;
+    bottom: -5rem;
+    left: 1rem;
+    width: 93%;
+    padding: 2rem 0;
+    box-shadow: 1px 1px 3px 0 lightgrey;
+    background-color: white;
+    border-radius: 1rem;
+
+    @include responsive(laptop){
+        left:20rem;
+        width: 50%;
+    }
+}

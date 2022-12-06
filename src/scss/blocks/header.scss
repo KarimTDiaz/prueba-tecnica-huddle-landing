@@ -1,0 +1,36 @@
+@use '../functions/image.scss' as *;
+@use '../mixins/responsive.scss' as *;
+@use '../mixins/flexbox.scss' as *;
+
+.header{
+    background-color: rgb(243, 255, 255);
+    background-image: image('bg-hero-mobile.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
+
+    @include responsive(laptop){
+background-image: image('bg-hero-desktop.svg');}
+
+    &__top{
+        @include flexbox(flex,row,nowrap,space-between,center);
+        padding: 1rem;
+        margin-bottom: 5rem;
+    }
+
+    &__content{
+        padding: 0 3rem;
+        @include responsive(laptop){
+            @include flexbox(flex,row,nowrap,space-evenly,center);
+            gap:50px;
+            text-align: start;
+        }
+    }
+    &__text{
+    margin-bottom: 3rem;
+}
+    &__button{
+    padding-top: 3rem;
+    }
+}
